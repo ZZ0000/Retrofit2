@@ -52,6 +52,8 @@ dependencies {
     compile "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}"
     compile "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
 
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
     compile ('com.jakewharton.rxbinding:rxbinding-appcompat-v7:1.0.0') {

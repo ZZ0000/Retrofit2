@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements ReposView {
         searchView.setQueryHint("Search...");
 
         //queryObservable =
-        RxSearchView.queryTextChangeEvents(searchView).debounce(1, TimeUnit.SECONDS, AndroidSchedulers.mainThread())
+        RxSearchView.queryTextChanges(searchView)
+                .debounce(3, TimeUnit.SECONDS, AndroidSchedulers.mainThread())
                 .subscribe(query -> reposPresenter.getRepos(query.toString()));
         return true;
     }
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements ReposView {
 
     private String[] getDataSet() {
 
-        String[] mDataSet = new String[100];
+        String[] mDataSet = new String[10];
         for (int i = 0; i < 10; i++) {
             mDataSet[i] = "item" + i;
         }
@@ -99,6 +100,15 @@ public class MainActivity extends AppCompatActivity implements ReposView {
 
     @Override
     public void showRepos(List<Repo> list) {
+        String[] mDataSet = new String[3];
+        //for (int i = 0; i < list.size(); i++) {
+           mDataSet[0] = "a";
+        mDataSet[1] = "s";
+        mDataSet[2] = "d";
+        //}
+
+        mAdapter = new RecyclerAdapter(mDataSet);
+        mRecyclerView.setAdapter(mAdapter);
 
     }
 

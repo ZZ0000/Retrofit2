@@ -15,9 +15,9 @@ public class Owner extends RealmObject {
     @SerializedName("login")
     @Expose
     private String login;
+    @PrimaryKey
     @SerializedName("id")
     @Expose
-    @PrimaryKey
     private Integer id;
     @SerializedName("avatar_url")
     @Expose

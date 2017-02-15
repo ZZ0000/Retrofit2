@@ -13,6 +13,6 @@ import rx.Single;
  */
 
 public interface ReposService {
-    @GET("/user/{user}/repos")
+    @GET("/users/{user}/repos")
     Single <List<Repo>> getRepos(@Path("user") String user);
 }
